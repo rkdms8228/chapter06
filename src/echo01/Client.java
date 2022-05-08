@@ -29,12 +29,12 @@ public class Client {
 		
 		//메세지 보내기용 스트림
 		OutputStream os = socket.getOutputStream();
-		OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+		OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8"); //번역
 		BufferedWriter bw = new BufferedWriter(osw);
 		
 		
 		InputStream is = socket.getInputStream();
-		InputStreamReader isr = new InputStreamReader(is, "UTF-8");
+		InputStreamReader isr = new InputStreamReader(is, "UTF-8"); //번역
 		BufferedReader br = new BufferedReader(isr);
 		
 		
@@ -63,8 +63,10 @@ public class Client {
 			
 			}
 
+		
 		System.out.println("=========================");
 		System.out.println("<클라이언트 종료>");
+		
 		
 		sc.close();
 		br.close();

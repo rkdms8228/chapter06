@@ -29,13 +29,13 @@ public class Server {
 		
 		//메세지 받기용 스트림
 		InputStream is = socket.getInputStream();
-		InputStreamReader isr = new InputStreamReader(is, "UTF-8");
+		InputStreamReader isr = new InputStreamReader(is, "UTF-8"); //번역
 		BufferedReader br = new BufferedReader(isr);
 		
 		
 		//메세지 보내기용 스트림
 		OutputStream os = socket.getOutputStream();
-		OutputStreamWriter osw = new OutputStreamWriter(os,  "UTF-8");
+		OutputStreamWriter osw = new OutputStreamWriter(os,  "UTF-8"); //번역
 		BufferedWriter bw = new BufferedWriter(osw);
 		
 	
@@ -60,6 +60,7 @@ public class Server {
 		
 		System.out.println("=========================");
 		System.out.println("<서버 종료>");
+		
 		
 		bw.close();
 		br.close();
