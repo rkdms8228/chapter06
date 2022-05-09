@@ -54,7 +54,7 @@ public class Client {
 			//메세지 보내기
 			bw.write(str);
 			bw.newLine();
-			bw.flush();
+			bw.flush(); //강제 보냄(일정 칸 수가 차지 않으면 전송이 되지 않지만 강제로 전송하게끔 하는 것)
 			
 			
 			//메세지 받기
