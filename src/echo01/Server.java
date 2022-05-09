@@ -30,7 +30,7 @@ public class Server {
 		//메세지 받기용 스트림
 		InputStream is = socket.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is, "UTF-8"); //번역
-		BufferedReader br = new BufferedReader(isr);
+		BufferedReader br = new BufferedReader(isr); //가속
 		
 		
 		//메세지 보내기용 스트림
@@ -53,7 +53,7 @@ public class Server {
 			//메세지 보내기
 			bw.write(msg);
 			bw.newLine();
-			bw.flush();
+			bw.flush(); //강제 보냄(일정 칸 수가 차지 않으면 전송이 되지 않지만 강제로 전송하게끔 하는 것)
 			
 		}
 		

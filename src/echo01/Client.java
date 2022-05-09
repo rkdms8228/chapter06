@@ -30,7 +30,7 @@ public class Client {
 		//메세지 보내기용 스트림
 		OutputStream os = socket.getOutputStream();
 		OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8"); //번역
-		BufferedWriter bw = new BufferedWriter(osw);
+		BufferedWriter bw = new BufferedWriter(osw); //가속
 		
 		
 		InputStream is = socket.getInputStream();
