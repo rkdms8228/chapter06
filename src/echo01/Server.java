@@ -16,7 +16,7 @@ public class Server {
 	public static void main(String[] args) throws IOException {
 		
 		ServerSocket serverSocket = new ServerSocket();
-		serverSocket.bind(new InetSocketAddress("192.168.45.93", 10001));
+		serverSocket.bind(new InetSocketAddress("192.168.0.8", 10001));
 		
 		System.out.println("<서버 시작>");
 		System.out.println("=========================");
@@ -62,7 +62,6 @@ public class Server {
 		System.out.println("<서버 종료>");
 		
 		
-		bw.close();
 		br.close();
 		socket.close();
 		serverSocket.close();

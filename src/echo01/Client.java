@@ -22,7 +22,7 @@ public class Client {
 
 		
 		System.out.println("[서버에 연결을 요청합니다.]");
-		socket.connect(new InetSocketAddress("192.168.45.93", 10001));
+		socket.connect(new InetSocketAddress("192.168.0.8", 10001));
 		
 		
 		System.out.println("[서버에 연결되었습니다.]");
@@ -33,19 +33,28 @@ public class Client {
 		BufferedWriter bw = new BufferedWriter(osw); //가속
 		
 		
+		//메세지 받기용 스트림
 		InputStream is = socket.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is, "UTF-8"); //번역
 		BufferedReader br = new BufferedReader(isr);
 		
 		
 		//스캐너
+		/*
 		Scanner sc = new Scanner(System.in);
+		*/
+		InputStream in = System.in;
+		InputStreamReader sisr = new InputStreamReader(in, "UTF-8");
+		BufferedReader sbr = new BufferedReader(sisr);
 		
 		
 		while(true) { //메세지를 계속 주고받기 위해 반복문
 			
 			//키보드 입력
+			/*
 			String str = sc.nextLine();
+			*/
+			String str = sbr.readLine();
 			
 			if(str.equals("/q")) {
 				break;
@@ -61,14 +70,23 @@ public class Client {
 			String reMsg = br.readLine();
 			System.out.println("server: ["+reMsg+"]");
 			
-			}
+		}
 
 		
 		System.out.println("=========================");
+		/*
 		System.out.println("<클라이언트 종료>");
+		*/
+		OutputStream out = System.out;
+		OutputStreamWriter posw = new OutputStreamWriter(out, "UTF-8");
+		BufferedWriter pbw = new BufferedWriter(posw);
+		
+		pbw.write("클라이언트 종료");
+		pbw.newLine();
+		pbw.flush();
 		
 		
-		sc.close();
+		//sc.close();
 		br.close();
 		bw.close();
 		socket.close();
